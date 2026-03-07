@@ -35,14 +35,51 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-
-
   </head>
-  <body class="geist bg-[#F8FAFC]">
-    <section class="w-10/12 bg-[#FFFFFF] mx-auto">
+  <body class="geist bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="card w-full max-w-md bg-white shadow-xl p-8">
+      <div class="max-w-50 mx-auto">
+        <img class="mx-auto" src="./assets/github-logo.png" alt="Github Logo" />
+      </div>
 
-    </section>
+      <h1 class="font-semibold text-2xl text-neutral text-center">
+        GitHub Issues Tracker
+      </h1>
+      <p class="text-gray-400 text-center">Sign in to manage your issues</p>
+
+      <div class="w-full">
+        <fieldset class="fieldset mb-2">
+          <legend class="fieldset-legend">Username</legend>
+          <input
+            id="username"
+            type="text"
+            class="input btn-block"
+            placeholder="Enter Username"
+            required
+          />
+          <legend class="fieldset-legend">Password</legend>
+          <input
+            id="password"
+            type="password"
+            class="input btn-block"
+            placeholder="Enter Password"
+            required
+          />
+        </fieldset>
+        <button id="signin-btn" class="btn btn-primary btn-block">Signin</button>
+      </div>
+      <div class="flex items-center my-4">
+        <hr class="flex-grow border-gray-300" />
+        <span class="px-3 text-gray-500">OR</span>
+        <hr class="flex-grow border-gray-300" />
+      </div>
+
+      <p class="text-gray-400 text-center">Demo Credentials</p>
+      <div class="bg-gray-300 max-auto text-center py-6 mt-2 rounded-xl">
+        <p><span class="font-bold">Username:</span> admin</p>
+        <p><span class="font-bold">Password:</span> admin123</p>
+      </div>
+    </div>
 
     <script src="./scripts/login.js"></script>
   </body>
