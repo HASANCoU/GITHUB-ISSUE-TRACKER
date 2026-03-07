@@ -202,6 +202,13 @@ async function loadAllIssues(){
     displayIssue(data.data);
 }
 
+async function loadOpenIssues() {
+    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+    const data =  await response.json();
+    console.log("loadOpenIssues was loaded");
+    const openIssues = data.data.filter((issue)=>issue.status==="open")
+    displayIssue(openIssues);
+}
 
 btnAll.addEventListener("click",()=>{
     btnActive(btnAll);
@@ -212,7 +219,9 @@ btnAll.addEventListener("click",()=>{
 btnOpen.addEventListener("click",()=>{
     btnActive(btnOpen);
 
-    
+    console.log("Open Button Was clicked");
+    loadOpenIssues();
+
 })
 
 btnClosed.addEventListener("click",()=>{
