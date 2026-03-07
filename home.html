@@ -31,12 +31,12 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      integrity="s8/12-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
+  <body class="geist bg-gray-100">
     <header>
       <div class="navbar bg-base-100 shadow-sm px-10">
         <div class="navbar-start">
@@ -70,5 +70,85 @@
         </div>
       </div>
     </header>
+
+    <!-- Banner Section-01 -->
+    <section
+      class="w-9/12 bg-white mx-auto mt-15 mb-4 p-6 space-x-2 rounded-md"
+    >
+      <button id="btn-all" class="btn btn-primary w-25">All</button>
+      <button id="btn-open" class="btn w-25">Open</button>
+      <button id="btn-closed" class="btn w-25">Closed</button>
+    </section>
+
+    <!-- Banner Section-02 -->
+    <section
+      class="w-9/12 bg-white mx-auto flex justify-between items-center p-6 rounded-md"
+    >
+      <div id="issue-left" class="flex justify-between items-center space-x-2">
+        <div class="bg-purple-50 rounded-full p-2">
+          <img src="./assets/Aperture.png" alt="" />
+        </div>
+        <div>
+          <h2 class="font-semibold text-xl">
+            <span id="issue-number">50</span> Issues
+          </h2>
+          <p class="text-gray-400">Track and manage your project issues</p>
+        </div>
+      </div>
+
+      <div id="issue-right" class="flex justify-between items-center space-x-4">
+        <div class="flex justify-between items-center space-x-1">
+          <span class="text-green-500"><i class="fa-solid fa-circle"></i></span>
+          <p class="font-medium text-[16px]">Open</p>
+        </div>
+        <div class="flex justify-between items-center space-x-1">
+          <span class="text-purple-500"
+            ><i class="fa-solid fa-circle"></i
+          ></span>
+          <p class="font-medium text-[16px]">Closed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Section -->
+    <main class="w-9/12 bg-[#FBFBFB] mx-auto p-6 mt-2 rounded-md">
+      <!-- Card Container -->
+      <div id="card-container" class="grid grid-cols-4 space-x-4 space-y-4">
+        <!-- Card Remain here -->
+        <!-- <div class="card bg-white p-4 rounded-md border-t-5 high-border space-y-3">
+          <div class="flex justify-between">
+            <div><img src="./assets/Open-Status.png" alt="Open" /></div>
+            <div class="badge high font-medium text-xs">HIGH</div>
+          </div>
+          <h2 class="font-semibold text-sm">Fix navigation menu on mobile devices</h2>
+          <p class="text-xs text-[#64748B]">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+          <div class="flex items-center space-x-2">
+            <div class="badge  border-2 bug flex items-center"><i class="fa-solid fa-bug font-medium text-xs"></i>BUG</div>
+            <div class="badge  border-2 help-wanted font-medium text-xs"><i class="fa-solid fa-life-ring"></i>HELP WANTED</div>
+          </div>
+          <div class="divider"></div>
+          <p class="text-xs text-[#64748B] p-0">#1 by john_doe</p>
+          <p class="text-xs text-[#64748B]">1/15/2024</p>
+        </div> -->
+
+        <!-- Cards End Here -->
+      </div>
+
+      <!-- Modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="issue_modal.showModal()">open modal</button> -->
+      <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box p-8" id="modal-container">
+                
+              
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <script src="./scripts/home.js"></script>
   </body>
 </html>

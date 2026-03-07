@@ -4,3 +4,58 @@
 .geist {
   font-family: "Geist", sans-serif;
 }
+
+.high{
+    background-color: #FEECEC;
+    color: #EF4444;
+}
+
+.medium{
+    background-color: #FFF6DE;
+    color: #F59E0B;
+}
+
+.low{
+    background-color: #EEEFF2;
+    color:#9CA3AF;
+}
+
+.bug{
+    background-color: #FEECEC;
+    color: #EF4444;
+    border-color: #FECACA;
+}
+
+.help-wanted{
+    background-color:#FFF8DB ;
+    color: #D97706;
+    border-color: #FDE68A;
+}
+.enhancement{
+    background-color:#DEFCE8 ;
+    color: #00A96E;
+    border-color: #BBF7D0;
+}
+.good-first-issue{
+    background-color:#b1deef91 ;
+    color: #0676988b;
+    border-color: #39c2f05c;
+}
+.documentation{
+    background-color:#f4ebd3ee ;
+    color: #eebe39;
+    border-color: #f3e59f;
+}
+
+.closed-border{
+    border-color: #A855F7;
+}
+.open-border{
+    border-color: #00A96E;
+}
+.enhancement{
+
+}
+.closed{
+    background-color: #00A96E;
+}
