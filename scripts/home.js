@@ -205,9 +205,16 @@ async function loadAllIssues(){
 async function loadOpenIssues() {
     const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data =  await response.json();
-    console.log("loadOpenIssues was loaded");
     const openIssues = data.data.filter((issue)=>issue.status==="open")
     displayIssue(openIssues);
+}
+
+async function loadClosedIssues() {
+    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+    const data = await response.json();
+    const closedIssues = data.data.filter((issue)=>issue.status==="closed");
+    displayIssue(closedIssues);
+
 }
 
 btnAll.addEventListener("click",()=>{
@@ -226,6 +233,8 @@ btnOpen.addEventListener("click",()=>{
 
 btnClosed.addEventListener("click",()=>{
     btnActive(btnClosed);
+
+    loadClosedIssues();
 })
 
 loadAllIssues();
