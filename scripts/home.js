@@ -58,6 +58,11 @@ const btnActive =(id)=>{
 
     id.classList.add("btn-primary");
 }
+const btnRemove = () =>{
+    btnAll.classList.remove('btn-primary');
+    btnOpen.classList.remove('btn-primary');
+    btnClosed.classList.remove('btn-primary');
+}
 
 
 //labels dynamic function
@@ -269,5 +274,27 @@ btnClosed.addEventListener("click",()=>{
     btnActive(btnClosed);
     loadClosedIssues();
 })
+
+
+//Active Search Button
+
+btnSearch.addEventListener("click", async () => {
+
+    const searchInput = document.getElementById('input-search');
+    const searchValue = searchInput.value.toLowerCase();
+
+    btnRemove();
+
+    const issues = await getIssues();
+
+    const filterIssues = issues.filter(issue =>
+        issue.title.toLowerCase().includes(searchValue)
+    );
+
+    const total = filterIssues.length;
+    updateNumberOfIssue(total);
+
+    displayIssue(filterIssues);
+});
 
 loadAllIssues();
