@@ -64,9 +64,9 @@
                 <path d="m21 21-4.3-4.3"></path>
               </g>
             </svg>
-            <input type="search" required placeholder="Search Issues..." />
+            <input id="input-search" type="search" required placeholder="Search Issues..." />
           </label>
-          <a class="btn btn-primary">+ New Issue</a>
+          <a  id="btn-search" class="btn btn-primary">+ New Issue</a>
         </div>
       </div>
     </header>
@@ -90,7 +90,7 @@
         </div>
         <div>
           <h2 class="font-semibold text-xl">
-            <span id="issue-number">50</span> Issues
+            <span id="issue-number">0</span> Issues
           </h2>
           <p class="text-gray-400">Track and manage your project issues</p>
         </div>
@@ -113,7 +113,7 @@
     <!-- Main Section -->
     <main class="w-9/12 bg-[#FBFBFB] mx-auto p-6 mt-2 rounded-md">
       <!-- Card Container -->
-      <div id="card-container" class="grid grid-cols-4 space-x-4 space-y-4">
+      <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-4 space-y-4">
         <!-- Card Remain here -->
         <!-- <div class="card bg-white p-4 rounded-md border-t-5 high-border space-y-3">
           <div class="flex justify-between">
@@ -133,9 +133,14 @@
           <p class="text-xs text-[#64748B]">1/15/2024</p>
         </div> -->
 
+
+        
+
         <!-- Cards End Here -->
       </div>
-
+    <div id="spinner" class="flex justify-center items-center hidden">
+            <span class="loading loading-spinner loading-xl"></span>
+        </div>
       <!-- Modal -->
       <!-- Open the modal using ID.showModal() method -->
       <!-- <button class="btn" onclick="issue_modal.showModal()">open modal</button> -->

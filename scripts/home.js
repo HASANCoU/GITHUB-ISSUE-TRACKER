@@ -3,11 +3,33 @@ console.log("home.js is connected with home.html")
 const btnAll = document.getElementById("btn-all");
 const btnOpen = document.getElementById("btn-open");
 const btnClosed = document.getElementById("btn-closed");
+const btnSearch = document.getElementById("btn-search");
 
 
 const cardContainer = document.getElementById("card-container");
 const modalContainer = document.getElementById('modal-container');
 const issueModal = document.getElementById('issue_modal');
+const totalIssue = document.getElementById("issue-number");
+const spinner = document.getElementById("spinner");
+
+
+function loadSpinner(){
+    spinner.classList.remove("hidden");
+    spinner.classList.add("flex");
+    
+}
+function hideSpinner(){
+    spinner.classList.add("hidden");
+    spinner.classList.remove("flex");
+
+}
+
+
+
+//Update Issue Number
+const updateNumberOfIssue = (total) =>{
+    totalIssue.textContent = total;
+}
 
 
 
@@ -142,8 +164,11 @@ async function displayIssue(issues){
     
  //Badge Image Dynamic
     card.classList.add("card","bg-white","p-4",
-"rounded-md","border-t-5","open-border","space-y-3","cursor-pointer"
-);
+"rounded-md","border-t-5","open-border","space-y-3","cursor-pointer");
+
+card.addEventListener("click", () => {
+    createModal(issue.id);
+});
 
 //Badge Dynamic
 
@@ -175,7 +200,7 @@ const imgSrc = statusImage[issue.status.toLowerCase()];
 
 
 card.innerHTML=`
-<div class="flex justify-between" cursor-pointer onclick="createModal(${issue.id})">
+<div class="flex justify-between cursor-pointer"  >
             <div><img  src="${imgSrc}" /></div>
             <div class="badge ${priorityClass}  font-medium text-xs">${issue.priority.toUpperCase()}</div>
           </div>
@@ -192,48 +217,56 @@ card.innerHTML=`
           <p class="text-xs text-[#64748B]">${createDate(issue.createdAt)}</p>
 `
 cardContainer.appendChild(card);
-
     });
+
+    hideSpinner();
+}
+
+async function getIssues() {
+    loadSpinner();
+    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+    const data =  await response.json();
+    return(data.data);
 }
 
 async function loadAllIssues(){
-    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
-    const data =  await response.json();
-    displayIssue(data.data);
+    const issues = await getIssues();
+    const length = issues.length;
+    updateNumberOfIssue(length);
+    displayIssue(issues);
+    
+
 }
 
 async function loadOpenIssues() {
-    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
-    const data =  await response.json();
-    const openIssues = data.data.filter((issue)=>issue.status==="open")
+    const issues = await getIssues();
+    const openIssues = issues.filter((issue)=>issue.status==="open")
+    const length = openIssues.length;
+    updateNumberOfIssue(length);
     displayIssue(openIssues);
 }
 
 async function loadClosedIssues() {
-    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
-    const data = await response.json();
-    const closedIssues = data.data.filter((issue)=>issue.status==="closed");
+    const issues = await getIssues();
+    const closedIssues = issues.filter((issue)=>issue.status==="closed");
+    const length = closedIssues.length;
+    updateNumberOfIssue(length);
     displayIssue(closedIssues);
-
 }
 
 btnAll.addEventListener("click",()=>{
     btnActive(btnAll);
-
     loadAllIssues();
 })
 
 btnOpen.addEventListener("click",()=>{
     btnActive(btnOpen);
-
     console.log("Open Button Was clicked");
     loadOpenIssues();
-
 })
 
 btnClosed.addEventListener("click",()=>{
     btnActive(btnClosed);
-
     loadClosedIssues();
 })
 
