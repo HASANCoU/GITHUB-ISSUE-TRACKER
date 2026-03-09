@@ -1,10 +1,157 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
 
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
+# JavaScript Concepts
+
+## 01. Difference between `var`, `let`, and `const`
+
+### var
+- `var` is the old way to declare variables.
+- It is **function scoped**, meaning it works inside a function block.
+- It can be **redeclared and updated**.
+
+**Example:**
+
+```javascript
+var name = "Hasan";
+var name = "Rahim"; // Allowed
+```
 
 ---
+
+### let
+- `let` was introduced in **ES6**.
+- It is **block scoped**, meaning it only works inside `{ }`.
+- It **can be updated but cannot be redeclared in the same scope**.
+
+**Example:**
+
+```javascript
+let name = "Hasan";
+let name = "Rahim"; // Not allowed
+name = "Rahim"; // Allowed
+```
+
+---
+
+### const
+- `const` is also **block scoped**.
+- It **cannot be updated or redeclared**.
+- It must be **assigned a value when declared**.
+
+**Example:**
+
+```javascript
+const name = "Hasan";
+const name = "Rahim"; // Not allowed
+name = "Rahim"; // Not allowed
+```
+## 02. What is the Spread Operator (`...`)?
+
+The spread operator (`...`) is used to **expand elements of an array or object**.
+
+It is commonly used to:
+- Copy arrays
+- Merge arrays
+- Copy objects
+
+### Example with Array
+
+```javascript
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];
+
+console.log(newNumbers);
+```
+
+### Example with Object
+
+```javascript
+const user = { name: "Hasan", age: 22 };
+
+const updatedUser = { ...user, city: "Dhaka" };
+```
+
+---
+
+## 03. Difference between `map()`, `filter()`, and `forEach()`
+
+These methods are used to work with arrays.
+
+### map()
+- Creates a **new array** after transforming each element.
+
+```javascript
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+```
+
+---
+
+### filter()
+- Creates a **new array with elements that pass a condition**.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const even = numbers.filter(num => num % 2 === 0);
+```
+
+---
+
+### forEach()
+- Executes a function for each element.
+- **Does not return a new array**.
+
+```javascript
+const numbers = [1, 2, 3];
+numbers.forEach(num => console.log(num));
+```
+
+---
+
+## 04. What is an Arrow Function?
+
+An arrow function is a **shorter way to write functions** introduced in ES6.
+
+### Example
+
+Normal Function:
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+Arrow Function:
+
+```javascript
+const add = (a, b) => a + b;
+```
+
+Arrow functions make the code **shorter and cleaner**.
+
+---
+
+## 05. What are Template Literals?
+
+Template literals are used to create strings easily using **backticks (` `)**.
+
+They allow:
+- Variable insertion
+- Multi-line strings
+
+### Example
+
+```javascript
+const name = "Hasan";
+const message = `Hello, my name is ${name}`;
+
+console.log(message);
+```
+
+This is easier than traditional string concatenation.
+
+---
+
 
 # Assignment-05: GitHub Issues Tracker
 
@@ -27,104 +174,6 @@
 
 ---
 
-## 📝 Main Requirements
-
-## 🎨 Design Part
-
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
-
-## Main Page: 
-
-### Navbar: 
-
-- Navbar with website logo/name on the left
-- Search input and button on the right
-
-### Tab Section like Figma: 
-
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
-
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
-
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
-
-
---- 
-
-
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
-
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
-
-- Each card shows:
-  - Title
-  - Description
-  - Status
-  - Category
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on a tree name in a card will open a modal and show all the information about that Issue. 
-
-### 🚀 Challenges
-
-
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
-
-- Loading spinner on data load
-
-- Show active button on changing category names
-
-- Implement Search Functionality and 8 meaningful github commit.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
-
-
----
-
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
-
-
-## 📤 What to submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
 
 
 # GITHUB-ISSUE-TRACKER
