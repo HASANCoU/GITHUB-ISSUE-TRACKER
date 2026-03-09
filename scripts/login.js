@@ -15,7 +15,9 @@ btn.addEventListener("click",()=>{
 
     if(username==="admin" && password === "admin123"){
         alert("Login Successful");
-        window.location.assign('../home.html');
+        window.location.assign(`../home.html || /GITHUB-ISSUE-TRACKER/home.html`);// Get repo name dynamically
+const base = location.hostname.includes('github.io') ? '/GITHUB-ISSUE-TRACKER' : '';
+window.location.assign(`${base}/home.html`);
     }
     else{
         
