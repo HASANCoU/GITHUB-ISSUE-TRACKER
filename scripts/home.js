@@ -4,8 +4,6 @@ const btnAll = document.getElementById("btn-all");
 const btnOpen = document.getElementById("btn-open");
 const btnClosed = document.getElementById("btn-closed");
 const btnSearch = document.getElementById("btn-search");
-
-
 const cardContainer = document.getElementById("card-container");
 const modalContainer = document.getElementById('modal-container');
 const issueModal = document.getElementById('issue_modal');
@@ -13,6 +11,9 @@ const totalIssue = document.getElementById("issue-number");
 const spinner = document.getElementById("spinner");
 
 
+
+
+//Spinner Function
 function loadSpinner(){
     spinner.classList.remove("hidden");
     spinner.classList.add("flex");
