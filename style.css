@@ -42,9 +42,9 @@
     border-color: #39c2f05c;
 }
 .documentation{
-    background-color:#f4ebd3ee ;
-    color: #eebe39;
-    border-color: #f3e59f;
+    background-color:#f7deedee ;
+    color: #f15eb6;
+    border-color: #f39fed;
 }
 
 .closed-border{
@@ -53,9 +53,7 @@
 .open-border{
     border-color: #00A96E;
 }
-.enhancement{
 
-}
 .closed{
-    background-color: #00A96E;
+    background-color: #e74c4c;
 }

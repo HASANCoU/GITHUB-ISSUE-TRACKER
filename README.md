@@ -74,10 +74,10 @@ const updatedUser = { ...user, city: "Dhaka" };
 
 ## 03. Difference between `map()`, `filter()`, and `forEach()`
 
-These methods are used to work with arrays.
+
 
 ### map()
-- Creates a **new array** after transforming each element.
+- Creates a **new array** after transforming each element.It apply something on each element of the array and store in a new array.
 
 ```javascript
 const numbers = [1, 2, 3];

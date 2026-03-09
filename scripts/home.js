@@ -190,8 +190,8 @@ const labelsHTML = issue.labels.map(label => {
   const icon = labelIcons[label.toLowerCase()] || "fa-tag";
 
   return `
-  <div class="badge border-2 ${label.replaceAll(" ","-")} flex items-center">
-      <i class="fa-solid ${icon} text-xs"></i>
+  <div class="badge text-[10px] p-1 border ${label.replaceAll(" ","-")} flex items-center">
+      <i class="fa-solid ${icon} "></i>
       ${label.toUpperCase()}
   </div>
   `;
@@ -214,7 +214,7 @@ card.innerHTML=`
           <p class="text-xs line-clamp-2 text-[#64748B]">
             ${issue.description}
           </p>
-          <div class="flex items-center justify-left text-xs overflow-hidden whitespace-nowrap gap-2">
+          <div class="flex items-center justify-left text-[2px] overflow-hidden whitespace-nowrap gap-1">
    ${labelsHTML}
 </div>
 
